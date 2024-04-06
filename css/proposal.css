@@ -7,6 +7,10 @@ h2 {
     color: rgb(251, 145, 251);
 }
 
+h3 {
+    color :rgb(248, 177, 248);
+}
+
 p {
     line-height: 1.5;
     margin-bottom: 10px;
