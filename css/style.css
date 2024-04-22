@@ -138,5 +138,26 @@ span {
 }
 
 
+#quiz-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
+#quiz-left-side, #quiz-right-side {
+  margin: 50px 100px;
+}
+
+.question, .form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+/* can't make the hover work for now - debug */
+#face1:hover {
+  background-image: url('img/emojis/color-face1.png');
+}
 
