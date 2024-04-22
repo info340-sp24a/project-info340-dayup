@@ -15,6 +15,7 @@ header img {
   height: 20%;
   width: 30%;
   margin-top: 20px;
+  align-items: center;
 }
 
 #nav-bar {
@@ -68,23 +69,23 @@ main {
   max-width: 400px;
 }
 
-#your-puppy-page .main {
+#your-puppy-page .container img {
   width: 600px;
-  height: 500px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  height: 550px;
+  position: relative;
+  top: 50%;
+  left: 60%;
 }
 
 #your-puppy-page .container .btn1,.btn2 {
   position: relative;
   top: 50%;
-  left: 80%;
+  left: 90%;
   background-color: #FFBE6D;
   font-size: 20px;
   padding: 16px 30px;
-  border: none;
-  border-radius: 30px;
+  border-radius: 1rem;
+  font-weight: bolder;
   margin: 30px;
 }
 
@@ -92,9 +93,24 @@ main {
   background-color: #FF9595;
 }
 
-#your-puppy-page .iamges {
-  position: absolute;
-  top: 150px;
-  left: 150px;
+#your-puppy-page .apple {
+  width: 100px;
+  height: 70px;
+  position: relative;
+  top: -600px;
+  left: 800px;
+}
+
+#your-puppy-page .heart {
+  width: 100px;
+  height: 70px;
+  position: relative;
+  top: -550px;
+  left: 780px;
+}
+
+#your-puppy-page h2 {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
