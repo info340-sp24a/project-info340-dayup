@@ -23,7 +23,7 @@ header img {
 }
 
 #nav-bar h1 {
-  padding: 50px;
+  padding: 1rem;
   background-color: #FFEAD5;
 }
 
@@ -217,4 +217,25 @@ footer {
   color: white;
   padding: 10px;
   margin-top: 50px;
+}
+
+#nav-bar h1 {
+  font-size: 25px;
+  color: black;
+}
+
+/* media query 1 */
+@media (min-width: 598px) {
+  #nav-bar h1 {
+    font-size: 35px;
+    color: white;
+  }
+}
+
+/* media query 2 */
+@media (min-width: 1200px) {
+  #nav-bar h1 {
+    font-size: 40px;
+    font-weight: 300;
+  }
 }
