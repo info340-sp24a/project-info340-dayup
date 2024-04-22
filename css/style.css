@@ -161,3 +161,51 @@ span {
   background-image: url('img/emojis/color-face1.png');
 }
 
+/* Page 3 - Mood Log */
+.mood-tracker-item {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  justify-content: space-between;
+}
+.date-box {
+  background-color: #FDBA74;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1.5em;
+  margin-right: 20px;
+  text-align: center;
+  min-width: 100px;
+}
+.mood-indicators {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+.mood-indicator {
+  background-color: #FFCDB2;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  margin: 0 10px;
+}
+.indicator-label {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #333;
+}
+.mood-note {
+  flex-grow: 2;
+  border: 2px solid #000;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1em;
+  outline: none;
+  min-width: 250px;
+}
