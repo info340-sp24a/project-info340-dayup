@@ -6,3 +6,4 @@
         </div>
         );
 </App>
+export default App;
