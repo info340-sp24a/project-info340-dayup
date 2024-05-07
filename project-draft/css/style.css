@@ -79,43 +79,43 @@ main {
 }
 
 #your-puppy-page .container img {
-  width: 600px;
-  height: 550px;
+  width: 400px;
+  height: 350px;
   position: relative;
   top: 50%;
-  left: 60%;
+  left: 20%;
 }
 
 #your-puppy-page .container .btn1,.btn2 {
   position: relative;
   top: 50%;
-  left: 90%;
+  left: 23%;
   background-color: #FFBE6D;
-  font-size: 20px;
-  padding: 16px 30px;
+  font-size: 12px;
+  padding: 10px 20px;
   border-radius: 1rem;
   font-weight: bolder;
-  margin: 30px;
+  margin: 10px;
 }
 
 #your-puppy-page .btn1:hover,.btn2:hover {
   background-color: #FF9595;
 }
 
-#your-puppy-page .apple {
-  width: 100px;
-  height: 70px;
+#your-puppy-page .cake {
+  width: 50px;
+  height: 20px;
   position: relative;
-  top: -600px;
-  left: 800px;
+  top: -400px;
+  left: 450px;
 }
 
 #your-puppy-page .heart {
-  width: 100px;
-  height: 70px;
+  width: 50px;
+  height: 20px;
   position: relative;
-  top: -550px;
-  left: 780px;
+  top: -330px;
+  left: 430px;
 }
 
 #your-puppy-page h2 {
@@ -233,18 +233,83 @@ footer {
   color: black;
 }
 
-/* media query 1 */
-@media (min-width: 598px) {
+
+/* media query 2 */
+@media (min-width: 768px) {
   #nav-bar h1 {
     font-size: 35px;
     color: white;
   }
+
+  #your-puppy-page .container img {
+    width: 500px;
+    height: 450px;
+    position: relative;
+    top: 50%;
+    left: 40%;
+  }
+
+  #your-puppy-page .container .btn1,.btn2 {
+    position: relative;
+    left: 55%;
+    font-size: 15px;
+    padding: 13px 25px;
+    margin: 20px;
+  }
+
+  #your-puppy-page .cake {
+    width: 70px;
+    height: 40px;
+    position: relative;
+    top: -500px;
+    left: 600px;
+  }
+  
+  #your-puppy-page .heart {
+    width: 70px;
+    height: 40px;
+    position: relative;
+    top: -450px;
+    left: 580px;
+  }
 }
 
-/* media query 2 */
+/* media query 3 */
 @media (min-width: 1200px) {
   #nav-bar h1 {
     font-size: 40px;
     font-weight: 300;
+  }
+
+  #your-puppy-page .container img {
+    width: 600px;
+    height: 550px;
+    position: relative;
+    top: 50%;
+    left: 60%;
+  }
+
+  #your-puppy-page .container .btn1,.btn2 {
+    position: relative;
+    left: 90%;
+    font-size: 20px;
+    padding: 16px 30px;
+    margin: 30px;
+  }
+
+  #your-puppy-page .cake {
+    width: 100px;
+    height: 70px;
+    position: relative;
+    top: -600px;
+    left: 800px;
+  }
+  
+  #your-puppy-page .heart {
+    width: 100px;
+    height: 70px;
+    position: relative;
+    top: -550px;
+    left: 780px;
   }
 }
