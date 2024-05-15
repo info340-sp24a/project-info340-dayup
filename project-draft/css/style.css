@@ -1,51 +1,39 @@
 /* CSS */
 
+/* Page 1.a - Home Page */
 body {
   font-family: 'Roboto', sans-serif;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #FFBE6D;
-}
-
-header img {
-  height: 20%;
-  width: 30%;
-  margin-top: 20px;
-  align-items: center;
+  text-align: center;
+  font-size: 16px;
 }
 
 #nav-bar {
   display: flex;
-}
-
-#nav-bar h1 {
-  padding: 1rem;
-  flex-grow: 1;
-  background-color: #FFEAD5;
-  height: 100%;
-}
-
-#nav-bar h1:nth-child(even) {
-  background-color: #FFDBB7;
-}
-
-#nav-bar{
-  display: flex;
+  background-color: #FFBE6D;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px;
   width: 100%;
-  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-#nav-bar h1:hover {
-  background-color: #FF9595;
+#nav-bar img {
+  max-height: 50px;
+  margin-right: auto;
 }
 
-main {
-  text-align: center;
+.nav-button {
+  display: none;
+}
+
+#hamburger-menu {
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: black;
 }
 
 #home-page {
@@ -59,8 +47,7 @@ main {
 }
 
 #home-page img {
-  max-width: 20%;
-  max-height: 20%;
+  max-width: 40%;
   padding: 20px 50px;
 }
 
@@ -72,6 +59,83 @@ main {
   margin-top: 10px;
 }
 
+
+/* Page 1.b - Quiz Page */
+#quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#quiz-left-side, #quiz-right-side {
+  margin: 50px 100px;
+}
+
+.question, .form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+  font-size: 1rem;
+}
+
+.quiz-icon-sections img {
+  max-height: 50px;
+}
+
+/* can't make the hover work for now - debug */
+#face1:hover {
+  background-image: url('img/emojis/color-face1.png');
+}
+
+/* media query for larger screens */
+@media (min-width: 598px) {
+  #hamburger-menu {
+    display: none;
+  }
+
+  .nav-button {
+    display: flex; /* Show nav buttons */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: black;
+  }
+
+  .nav-button:hover {
+  text-decoration: underline;
+ }
+
+  #home-page img {
+    max-width: 25%;
+  }
+
+  .quiz-icon-sections img {
+    max-height: 100%;
+  }
+}
+
+/* media query 2 */
+@media (min-width: 992px) {
+  #quiz-container {
+    flex-direction: row;
+  }
+}
+
+
+
+
+
+
+
+
+/* ING! ... */
+
+
+/* Page 2 - Your Puppy Page */
 #your-puppy-page .container {
   position: relative;
   width: 100%;
@@ -123,54 +187,11 @@ main {
   text-align: center;
 }
 
-#puppy-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.row {
-  display: flex;
-
-}
-
-#puppy-list img {
-  width: 12%;
-  margin: 15px;
-}
-
-span {
-  font-size: 15px;
-  color: #333;
-  font-family: 'Times New Roman', cursive;
-  margin-left: 5px;
-}
-
-
-#quiz-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-#quiz-left-side, #quiz-right-side {
-  margin: 50px 100px;
-}
-
-.question, .form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 20px 0;
-}
-
-/* can't make the hover work for now - debug */
-#face1:hover {
-  background-image: url('img/emojis/color-face1.png');
-}
-
 /* Page 3 - Mood Log */
+#mood-log-container {
+  margin-top: 10em;
+}
+
 .mood-tracker-item {
   display: flex;
   align-items: center;
@@ -219,22 +240,48 @@ span {
   min-width: 250px;
 }
 
+/* footer */
 footer {
   text-align: center;
   font-size: 10px;
   background-color: #333;
   color: white;
-  padding: 10px;
-  margin-top: 50px;
+  width: 100%;
+  position: fixed;
+  inset: auto 0 0 0;
 }
 
-#nav-bar h1 {
-  font-size: 25px;
-  color: black;
+/* Page 4 - Puppy collection page*/
+#puppy-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10em;
 }
+
+.row {
+  display: flex;
+
+}
+
+#puppy-list img {
+  width: 12%;
+  margin: 15px;
+}
+
+span {
+  font-size: 15px;
+  color: #333;
+  font-family: 'Times New Roman', cursive;
+  margin-left: 5px;
+}
+
+
+/* MEDIA QUERIES (page 2, 3, 4)
 
 
 /* media query 2 */
+/*
 @media (min-width: 768px) {
   #nav-bar h1 {
     font-size: 35px;
@@ -264,7 +311,7 @@ footer {
     top: -500px;
     left: 600px;
   }
-  
+
   #your-puppy-page .heart {
     width: 70px;
     height: 40px;
@@ -273,8 +320,10 @@ footer {
     left: 580px;
   }
 }
+*/
 
 /* media query 3 */
+/*
 @media (min-width: 1200px) {
   #nav-bar h1 {
     font-size: 40px;
@@ -304,7 +353,7 @@ footer {
     top: -600px;
     left: 800px;
   }
-  
+
   #your-puppy-page .heart {
     width: 100px;
     height: 70px;
@@ -313,3 +362,4 @@ footer {
     left: 780px;
   }
 }
+*/
