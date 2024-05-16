@@ -47,6 +47,7 @@ header {
   /* background-image: url("../img/home-bg.png"); */
   background-size: cover;
   padding-top: 70px;
+  margin-top: 10em;
 }
 
 #home-page img {
@@ -69,6 +70,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 5em;
 }
 
 #quiz-left-side, #quiz-right-side {
@@ -87,10 +89,10 @@ header {
   max-height: 50px;
 }
 
-/* can't make the hover work for now - debug */
+/* can't make the hover work for now - debug
 #face1:hover {
   background-image: url('img/emojis/color-face1.png');
-}
+} */
 
 /* media query for larger screens */
 @media (min-width: 598px) {
@@ -128,9 +130,16 @@ header {
   }
 }
 
-
-
-
+/* footer */
+footer {
+  text-align: center;
+  font-size: 10px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  position: fixed;
+  inset: auto 0 0 0;
+}
 
 
 
@@ -241,17 +250,6 @@ header {
   font-size: 1em;
   outline: none;
   min-width: 250px;
-}
-
-/* footer */
-footer {
-  text-align: center;
-  font-size: 10px;
-  background-color: #333;
-  color: white;
-  width: 100%;
-  position: fixed;
-  inset: auto 0 0 0;
 }
 
 /* Page 4 - Puppy collection page*/

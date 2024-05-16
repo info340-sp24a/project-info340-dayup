@@ -1,0 +1,142 @@
+/* CSS */
+
+/* Page 1.a - Home Page */
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 16px;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#nav-bar {
+  display: flex;
+  background-color: #FFBE6D;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+#nav-bar img {
+  max-height: 50px;
+  margin-right: auto;
+}
+
+.nav-button {
+  display: none;
+}
+
+#hamburger-menu {
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+
+#home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url("../img/home-bg.png"); */
+  background-size: cover;
+  padding-top: 70px;
+  margin-top: 10em;
+}
+
+#home-page img {
+  max-width: 40%;
+  padding: 20px 50px;
+}
+
+#home-page .button {
+  padding: 20px;
+  background-color: #FFBE6D;
+  border-radius: 1rem;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+
+/* Page 1.b - Quiz Page */
+#quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+}
+
+#quiz-left-side, #quiz-right-side {
+  margin: 50px 100px;
+}
+
+.question, .form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+  font-size: 1rem;
+}
+
+.quiz-icon-sections img {
+  max-height: 50px;
+}
+
+/* can't make the hover work for now - debug */
+/* #face1:hover {
+  background-image: url('img/emojis/color-face1.png');
+} */
+
+/* media query for larger screens */
+@media (min-width: 598px) {
+  #hamburger-menu {
+    display: none;
+  }
+
+  .nav-button {
+    display: flex; /* Show nav buttons */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: black;
+  }
+
+  .nav-button:hover {
+  text-decoration: underline;
+ }
+
+  #home-page img {
+    max-width: 25%;
+  }
+
+  .quiz-icon-sections img {
+    max-height: 100%;
+  }
+}
+
+/* media query 2 */
+@media (min-width: 992px) {
+  #quiz-container {
+    flex-direction: row;
+  }
+}
+
+/* footer */
+footer {
+  text-align: center;
+  font-size: 10px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  position: fixed;
+  inset: auto 0 0 0;
+}
