@@ -8,7 +8,7 @@ export function YourPuppy(props) {
         < PageHeader />
         <main>
             <section id="your-puppy-page">
-            <h2>Hi Shiba Inu!</h2>
+            <h2>Hi Hachi!</h2>
             <section className="container">
                 <img src="img/doog 1.png" alt="A cute pixel art Shiba Inu"/>
                 <button type="button" className="btn1" id="taptap">tap</button>
