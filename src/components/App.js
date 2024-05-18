@@ -3,6 +3,7 @@ import { PageHome } from './Home';
 import { PageQuiz } from './Quiz';
 import { PagePuppyCards } from './PuppyCards';
 import { YourPuppy } from './Puppy';
+import { NavBar } from './navbar';
 
 export function App({ puppyData }) {
 
