@@ -1,12 +1,24 @@
-import React from "react";
+import React, {useState} from 'react';
 import { PageHeader } from "./Header";
 import { PageFooter } from "./Footer";
 
 export function PagePuppyCards({ puppyData }) {
 
-  console.log(puppyData[0]);
+  // search
+  const [search, setSearch] = useState('');
+  console.log(search);
 
-  const puppy = puppyData.map((puppy) => {
+  // filtered searched puppy data
+  const filteredPuppiesData = puppyData.filter((item) => {
+    if (search.toLowerCase() === '') {
+      return item;
+    } else {
+      return (item.name + ' ' + item.breed).toLowerCase().includes(search.toLowerCase());
+    }
+  });
+
+  // render cards with filtered data
+  const singlePuppyCard = filteredPuppiesData.map((puppy) => {
     return (
       <section key={puppy.id} className="puppy-card">
         <img src={puppy.image} alt={puppy.name + '-' +  puppy.breed + "puppy img"} />
@@ -22,12 +34,12 @@ export function PagePuppyCards({ puppyData }) {
       <main>
         {/* search filter */}
         <section id="search-container">
-          <input type="text" id="search-input" placeholder="Search a dog breed..." />
+          <input type="text" id="search-input" onChange={(e) => setSearch(e.target.value)} placeholder="Search a puppy through name or breed ..."  />
           <button id="search-button">Search</button>
         </section>
-        {/* card display area  - display each card */}
+        {/* card display area  - render each card */}
         <section id="puppy-card-container">
-          {puppy}
+          {singlePuppyCard}
         </section>
       </main>
       <PageFooter />
