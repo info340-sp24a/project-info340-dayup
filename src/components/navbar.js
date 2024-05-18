@@ -6,16 +6,16 @@ export function NavBar() {
     <nav className="navbar">
       <ul className="navbar-list">
         <li className="navbar-item">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/quiz">Quiz</Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/puppy-cards">Puppy Cards</Link>
+          <Link to="/">Daily Check-in</Link>
         </li>
         <li className="navbar-item">
           <Link to="/your-puppy">Your Puppy</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/Moodlog">Mood Log</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/PuppyCards">Puppy List</Link>
         </li>
       </ul>
     </nav>

@@ -148,24 +148,25 @@ footer {
 
 
 /* Page 2 - Your Puppy Page */
+
+#your-puppy-page .center {
+  display: flex;
+  justify-content: center;
+}
+
 #your-puppy-page .container {
   position: relative;
-  width: 100%;
   max-width: 400px;
 }
 
 #your-puppy-page .container img {
   width: 400px;
   height: 350px;
-  position: relative;
   top: 50%;
   left: 20%;
 }
 
 #your-puppy-page .container .btn1,.btn2 {
-  position: relative;
-  top: 50%;
-  left: 23%;
   background-color: #FFBE6D;
   font-size: 12px;
   padding: 10px 20px;
@@ -179,25 +180,60 @@ footer {
 }
 
 #your-puppy-page .cake {
-  width: 50px;
-  height: 20px;
-  position: relative;
-  top: -400px;
-  left: 450px;
+  width: 20px;
+  height: 10px;
+  position: relative; 
 }
 
 #your-puppy-page .heart {
-  width: 50px;
-  height: 20px;
   position: relative;
-  top: -330px;
-  left: 430px;
+  top: 60px;
+  left: -20px;  
 }
 
 #your-puppy-page h2 {
   font-family: 'Roboto', sans-serif;
   text-align: center;
 }
+
+/* media query for larger screens */
+@media (min-width: 598px) {
+  #your-puppy-page .container img {
+    width: 500px;
+    height: 450px;
+    left: 40%;
+  }
+
+  #your-puppy-page .container .btn1,.btn2 {
+    left: 55%;
+    font-size: 15px;
+    padding: 13px 25px;
+    margin: 20px;
+  }
+}
+
+/* media query 2 */
+@media (min-width: 992px) {
+  #nav-bar h1 {
+    font-size: 40px;
+    font-weight: 300;
+  }
+
+  #your-puppy-page .container img {
+    width: 600px;
+    height: 550px;
+    top: 50%;
+    left: 60%;
+  }
+
+  #your-puppy-page .container .btn1,.btn2 {
+    left: 90%;
+    font-size: 20px;
+    padding: 16px 30px;
+    margin: 30px;
+  }
+}
+
 
 /* Page 3 - Mood Log */
 #mood-log-container {
@@ -325,49 +361,6 @@ footer {
 
 
 /* MEDIA QUERIES (page 2, 3, 4)
-
-
-/* media query 2 */
-/*
-@media (min-width: 768px) {
-  #nav-bar h1 {
-    font-size: 35px;
-    color: white;
-  }
-
-  #your-puppy-page .container img {
-    width: 500px;
-    height: 450px;
-    position: relative;
-    top: 50%;
-    left: 40%;
-  }
-
-  #your-puppy-page .container .btn1,.btn2 {
-    position: relative;
-    left: 55%;
-    font-size: 15px;
-    padding: 13px 25px;
-    margin: 20px;
-  }
-
-  #your-puppy-page .cake {
-    width: 70px;
-    height: 40px;
-    position: relative;
-    top: -500px;
-    left: 600px;
-  }
-
-  #your-puppy-page .heart {
-    width: 70px;
-    height: 40px;
-    position: relative;
-    top: -450px;
-    left: 580px;
-  }
-}
-*/
 
 /* media query 3 */
 /*
