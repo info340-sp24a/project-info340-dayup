@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Buddy",
+    "breed": "Golden Retriever",
+    "emotion": "Joyful",
+    "image": "img/Golden Retriever.png"
+  },
+  {
+    "id": 2,
+    "name": "Sunny",
+    "breed": "Golden Retriever",
+    "emotion": "Joyful",
+    "image": "img/Golden Retriever.png"
+  },
+  {
+    "id": 3,
+    "name": "Tank",
+    "breed": "Bulldog",
+    "emotion": "Stubborn",
+    "image": "img/Bulldog.png"
+  },
+  {
+    "id": 4,
+    "name": "Max",
+    "breed": "Labrador Retriever",
+    "emotion": "Friendly",
+    "image": "img/Labrador Retriever.png"
+  },
+  {
+    "id": 5,
+    "name": "Bubbles",
+    "breed": "Pug",
+    "emotion": "Playful",
+    "image": "img/Pug.png"
+  },
+  {
+    "id": 6,
+    "name": "Peanut",
+    "breed": "French Bulldog",
+    "emotion": "Comical",
+    "image": "img/French Bulldog.png"
+  },
+  {
+    "id": 7,
+    "name": "Rex",
+    "breed": "German Shepherd",
+    "emotion": "Alert",
+    "image": "img/German Shepherd.png"
+  },
+  {
+    "id": 8,
+    "name": "Kuma",
+    "breed": "Shiba Inu",
+    "emotion": "Independent",
+    "image": "img/Shiba Inu.png"
+  },
+  {
+    "id": 9,
+    "name": "Apollo",
+    "breed": "Great Dane",
+    "emotion": "Gentle",
+    "image": "img/Great Dane.png"
+  },
+  {
+    "id": 10,
+    "name": "Spike",
+    "breed": "Chihuahua",
+    "emotion": "Feisty",
+    "image": "img/Chihuahua.png"
+  },
+  {
+    "id": 11,
+    "name": "Pepper",
+    "breed": "Schnauzer",
+    "emotion": "Spirited",
+    "image": "img/Schnauzer.png"
+  },
+  {
+    "id": 12,
+    "name": "Moose",
+    "breed": "Saint Bernard",
+    "emotion": "Calm",
+    "image": "img/Saint Bernard.png"
+  },
+  {
+    "id": 13,
+    "name": "Hachi",
+    "breed": "Akita",
+    "emotion": "Loyal",
+    "image": "img/Akita.png"
+  },
+  {
+    "id": 14,
+    "name": "Daisy",
+    "breed": "Golden Retriever",
+    "emotion": "Joyful",
+    "image": "img/Golden Retriever.png"
+  },
+  {
+    "id": 15,
+    "name": "Ziggy",
+    "breed": "Pug",
+    "emotion": "Playful",
+    "image": "img/Pug.png"
+  },
+  {
+    "id": 16,
+    "name": "Waffles",
+    "breed": "French Bulldog",
+    "emotion": "Comical",
+    "image": "img/French Bulldog.png"
+  },
+  {
+    "id": 17,
+    "name": "Scout",
+    "breed": "German Shepherd",
+    "emotion": "Alert",
+    "image": "img/German Shepherd.png"
+  },
+  {
+    "id": 18,
+    "name": "Bear",
+    "breed": "Saint Bernard",
+    "emotion": "Calm",
+    "image": "img/Saint Bernard.png"
+  },
+  {
+    "id": 19,
+    "name": "Samurai",
+    "breed": "Akita",
+    "emotion": "Loyal",
+    "image": "img/Akita.png"
+  },
+  {
+    "id": 20,
+    "name": "Zeus",
+    "breed": "Great Dane",
+    "emotion": "Gentle",
+    "image": "img/Great Dane.png"
+  }
+]

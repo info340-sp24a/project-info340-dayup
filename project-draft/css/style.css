@@ -253,28 +253,74 @@ footer {
 }
 
 /* Page 4 - Puppy collection page*/
-#puppy-list {
+
+#puppy-card-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 10%;
+  margin-bottom: 20%;
 }
 
-.row {
-  display: flex;
-
+.puppy-card {
+  background-color: #fff;
+  border: 1px solid rgb(39, 39, 39);
+  border-radius: 10px;
+  border-width: 0.3em;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
 }
 
-#puppy-list img {
-  width: 12%;
-  margin: 15px;
+.puppy-card img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
 }
 
-span {
-  font-size: 15px;
-  color: #333;
-  font-family: 'Times New Roman', cursive;
-  margin-left: 5px;
+.puppy-card h1 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.puppy-card p.dog-breed {
+  font-size: 1em;
+  color: #555;
+}
+
+#search-container {
+  text-align: center;
+  margin-top: 10%;
+}
+
+/* search filter function */
+#search-input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+#search-input:focus {
+  border-color: #FDBA74;
+}
+
+#search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #FDBA74;
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+#search-button:hover {
+  background-color: #FDBA74;
 }
 
 

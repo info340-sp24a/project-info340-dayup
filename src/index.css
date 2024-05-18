@@ -89,8 +89,8 @@ header {
   max-height: 50px;
 }
 
-/* can't make the hover work for now - debug */
-/* #face1:hover {
+/* can't make the hover work for now - debug
+#face1:hover {
   background-image: url('img/emojis/color-face1.png');
 } */
 
@@ -140,3 +140,273 @@ footer {
   position: fixed;
   inset: auto 0 0 0;
 }
+
+
+
+
+/* ING! ... */
+
+
+/* Page 2 - Your Puppy Page */
+#your-puppy-page .container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+#your-puppy-page .container img {
+  width: 400px;
+  height: 350px;
+  position: relative;
+  top: 50%;
+  left: 20%;
+}
+
+#your-puppy-page .container .btn1,.btn2 {
+  position: relative;
+  top: 50%;
+  left: 23%;
+  background-color: #FFBE6D;
+  font-size: 12px;
+  padding: 10px 20px;
+  border-radius: 1rem;
+  font-weight: bolder;
+  margin: 10px;
+}
+
+#your-puppy-page .btn1:hover,.btn2:hover {
+  background-color: #FF9595;
+}
+
+#your-puppy-page .cake {
+  width: 50px;
+  height: 20px;
+  position: relative;
+  top: -400px;
+  left: 450px;
+}
+
+#your-puppy-page .heart {
+  width: 50px;
+  height: 20px;
+  position: relative;
+  top: -330px;
+  left: 430px;
+}
+
+#your-puppy-page h2 {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+/* Page 3 - Mood Log */
+#mood-log-container {
+  margin-top: 10em;
+}
+
+.mood-tracker-item {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  justify-content: space-between;
+}
+.date-box {
+  background-color: #FDBA74;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1.5em;
+  margin-right: 20px;
+  text-align: center;
+  min-width: 100px;
+}
+.mood-indicators {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+.mood-indicator {
+  background-color: #FFCDB2;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  margin: 0 10px;
+}
+.indicator-label {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #333;
+}
+.mood-note {
+  flex-grow: 2;
+  border: 2px solid #000;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1em;
+  outline: none;
+  min-width: 250px;
+}
+
+/* Page 4 - Puppy collection page*/
+
+#puppy-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 10%;
+  margin-bottom: 20%;
+}
+
+.puppy-card {
+  background-color: #fff;
+  border: 1px solid rgb(39, 39, 39);
+  border-radius: 10px;
+  border-width: 0.3em;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+}
+
+.puppy-card img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.puppy-card h1 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.puppy-card p.dog-breed {
+  font-size: 1em;
+  color: #555;
+}
+
+#search-container {
+  text-align: center;
+  margin-top: 10%;
+}
+
+/* search filter function */
+#search-input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+#search-input:focus {
+  border-color: #FDBA74;
+}
+
+#search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #FDBA74;
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+#search-button:hover {
+  background-color: #FDBA74;
+}
+
+
+/* MEDIA QUERIES (page 2, 3, 4)
+
+
+/* media query 2 */
+/*
+@media (min-width: 768px) {
+  #nav-bar h1 {
+    font-size: 35px;
+    color: white;
+  }
+
+  #your-puppy-page .container img {
+    width: 500px;
+    height: 450px;
+    position: relative;
+    top: 50%;
+    left: 40%;
+  }
+
+  #your-puppy-page .container .btn1,.btn2 {
+    position: relative;
+    left: 55%;
+    font-size: 15px;
+    padding: 13px 25px;
+    margin: 20px;
+  }
+
+  #your-puppy-page .cake {
+    width: 70px;
+    height: 40px;
+    position: relative;
+    top: -500px;
+    left: 600px;
+  }
+
+  #your-puppy-page .heart {
+    width: 70px;
+    height: 40px;
+    position: relative;
+    top: -450px;
+    left: 580px;
+  }
+}
+*/
+
+/* media query 3 */
+/*
+@media (min-width: 1200px) {
+  #nav-bar h1 {
+    font-size: 40px;
+    font-weight: 300;
+  }
+
+  #your-puppy-page .container img {
+    width: 600px;
+    height: 550px;
+    position: relative;
+    top: 50%;
+    left: 60%;
+  }
+
+  #your-puppy-page .container .btn1,.btn2 {
+    position: relative;
+    left: 90%;
+    font-size: 20px;
+    padding: 16px 30px;
+    margin: 30px;
+  }
+
+  #your-puppy-page .cake {
+    width: 100px;
+    height: 70px;
+    position: relative;
+    top: -600px;
+    left: 800px;
+  }
+
+  #your-puppy-page .heart {
+    width: 100px;
+    height: 70px;
+    position: relative;
+    top: -550px;
+    left: 780px;
+  }
+}
+*/
