@@ -1,11 +1,13 @@
 // Page 3 - your puppy
 import { PageHeader } from "./Header";
 import { PageFooter } from "./Footer";
+import { NavBar } from "./navbar";
 
 
 export function YourPuppy(props) {
     return (
     <body>
+        < NavBar />
         < PageHeader />
         <main>
             <section id="your-puppy-page">

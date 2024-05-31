@@ -16,7 +16,8 @@ export function App({ puppyData }) {
     <div className="component-app">
       {/* <PageHome /> */}
       {/* <PageQuiz /> */}
-      {/* {< YourPuppy /> } */}
+      { < YourPuppy /> }
+
 
       {<PagePuppyCards puppyData={puppyData} />}
 
