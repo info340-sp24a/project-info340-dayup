@@ -11,9 +11,9 @@ export function App({ puppyData }) {
     <div className="component-app">
       {/* <PageHome /> */}
       {/* <PageQuiz /> */}
-      {/* {< YourPuppy /> } */}
+      { < YourPuppy /> }
 
-      { <PagePuppyCards puppyData={puppyData} /> }
+      {/* { <PagePuppyCards puppyData={puppyData} /> } */}
 
         {/* <Display value={this.state.next || this.state.total || "0"} />
         <ButtonPanel clickHandler={this.handleClick} /> */}

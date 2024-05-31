@@ -1,6 +1,7 @@
 /* CSS */
 
 /* Page 1.a - Home Page */
+
 body {
   font-family: 'Roboto', sans-serif;
   text-align: center;
@@ -100,6 +101,8 @@ header {
     display: none;
   }
 
+  
+
   .nav-button {
     display: flex; /* Show nav buttons */
     background-color: transparent;
@@ -125,6 +128,10 @@ header {
 
 /* media query 2 */
 @media (min-width: 992px) {
+  #navbar {
+    display: none;
+  }
+
   #quiz-container {
     flex-direction: row;
   }
