@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageHome } from './Home';
 import { PageQuiz } from './Quiz';
+import { PageQuizCompletion } from './QuizCompletion';
 import { PagePuppyCards } from './PuppyCards';
 import { YourPuppy } from './Puppy';
 //import { NavBar } from './Navbar';
@@ -16,6 +17,7 @@ export function App({ puppyData }) {
     <div className="component-app">
       {/* <PageHome /> */}
       {/* <PageQuiz /> */}
+      {/* <PageQuizCompletion /> */}
       { < YourPuppy /> }
 
 
