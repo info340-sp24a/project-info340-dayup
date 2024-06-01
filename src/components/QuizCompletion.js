@@ -3,10 +3,12 @@
 import React from 'react';
 import { PageHeader } from "./Header";
 import { PageFooter } from "./Footer";
+import { NavBar } from "./navbar";
 
 const PageQuizCompletion = () => {
   return (
     <body>
+      < NavBar />
       <PageHeader />
       <main>
         <section id="quiz-completion-page">
@@ -29,4 +31,4 @@ const PageQuizCompletion = () => {
   );
 }
 
-export default PageQuizCompletion;
+export default MainContent;

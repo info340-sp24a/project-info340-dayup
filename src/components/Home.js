@@ -2,10 +2,12 @@
 
 import { PageHeader } from "./Header";
 import { PageFooter } from "./Footer";
+import { NavBar } from "./navbar";
 
 export function PageHome(props) {
   return (
     <body>
+      < NavBar />
       <PageHeader />
       <main>
           <section id="home-page">
