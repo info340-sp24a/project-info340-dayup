@@ -1,5 +1,4 @@
 import React from 'react';
-import "../index.css";
 //import { Link } from 'react-router-dom'; // Assuming you are using react-router for navigation
 
 

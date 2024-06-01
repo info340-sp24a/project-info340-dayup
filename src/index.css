@@ -2,85 +2,80 @@
 
 
 /* Page 1.a - Home Page */
-#navBar {
-  align-items: center;
-  justify-content: space-between;
-  }
-  
-  
   .navButtonSmall {
-  display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  
   
   body {
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-  font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 16px;
   }
   
   
   header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
   
   
   #nav-bar {
-  display: flex;
-  background-color: #FFBE6D;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+    display: flex;
+    background-color: #FFBE6D;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
   }
   
   
   #nav-bar img {
-  max-height: 50px;
-  margin-right: auto;
+    max-height: 50px;
+    margin-right: auto;
   }
   
   
   .nav-button {
-  display: none;
+    display: none;
   }
   
   
   #hamburger-menu {
-  display: block;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: black;
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: black;
   }
   
   
   #home-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* background-image: url("../img/home-bg.png"); */
-  background-size: cover;
-  padding-top: 70px;
-  margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url("../img/home-bg.png"); */
+    background-size: cover;
+    padding-top: 70px;
+    margin-top: 10em;
   }
   
   
   #home-page img {
-  max-width: 40%;
-  padding: 20px 50px;
+    max-width: 40%;
+    padding: 20px 50px;
   }
   
   
   #home-page .button {
-  padding: 20px;
-  background-color: #FFBE6D;
-  border-radius: 1rem;
-  font-weight: bolder;
-  margin-top: 10px;
+    padding: 20px;
+    background-color: #FFBE6D;
+    border-radius: 1rem;
+    font-weight: bolder;
+    margin-top: 10px;
   }
   
   
@@ -88,30 +83,30 @@
   
   /* Page 1.b - Quiz Page */
   #quiz-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
   }
   
   
   #quiz-left-side, #quiz-right-side {
-  margin: 50px 100px;
+    margin: 50px 100px;
   }
   
   
   .question, .form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 20px 0;
-  font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+    font-size: 1rem;
   }
   
   
   .quiz-icon-sections img {
-  max-height: 50px;
+    max-height: 50px;
   }
   
   /* Page 1.c - quiz completion page */
@@ -184,40 +179,40 @@
   
   /* media query for larger screens */
   @media (min-width: 598px) {
-  #hamburger-menu {
-  display: none;
+    #hamburger-menu {
+    display: none;
   }
   
   
-  .navBar {
-  display: none;
-  }
+    .navBar {
+      display: none;
+    }
   
   
-  .nav-button {
-  display: flex; /* Show nav buttons */
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 5px 10px;
-  font-size: 16px;
-  color: black;
-  }
-  
-  
-  .nav-button:hover {
-  text-decoration: underline;
-  }
-  
-  
-  #home-page img {
-  max-width: 25%;
-  }
-  
-  
-  .quiz-icon-sections img {
-  max-height: 100%;
-  }
+    .nav-button {
+      display: flex; /* Show nav buttons */
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 16px;
+      color: black;
+    }
+    
+    
+    .nav-button:hover {
+      text-decoration: underline;
+    }
+    
+    
+    #home-page img {
+      max-width: 25%;
+    }
+    
+    
+    .quiz-icon-sections img {
+      max-height: 100%;
+    }
   }
 
 
@@ -225,26 +220,26 @@
   
   /* media query 2 */
   @media (min-width: 992px) {
-  #navbar {
-  display: none;
-  }
+    #navbar {
+      display: none;
+    }
   
   
-  #quiz-container {
-  flex-direction: row;
-  }
+    #quiz-container {
+      flex-direction: row;
+    }
   }
   
   
   /* footer */
   footer {
-  text-align: center;
-  font-size: 10px;
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  margin-top: 5%;
-}
+    text-align: center;
+    font-size: 10px;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    margin-top: 5%;
+  }
   
   
   
@@ -255,100 +250,99 @@
   
   /* Page 2 - Your Puppy Page */
   #your-puppy-page .center {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
   }
   
   
   #your-puppy-page .container {
-  position: relative;
-  max-width: 400px;
+    position: relative;
+    max-width: 400px;
   }
   
   
   #your-puppy-page .container img {
-  width: 400px;
-  height: 350px;
-  top: 50%;
-  left: 20%;
+    width: 400px;
+    height: 350px;
+    top: 50%;
+    left: 20%;
   }
   
   
   #your-puppy-page .container .btn1,.btn2 {
-  background-color: #FFBE6D;
-  font-size: 12px;
-  padding: 10px 20px;
-  border-radius: 1rem;
-  font-weight: bolder;
-  margin: 10px;
+    background-color: #FFBE6D;
+    font-size: 12px;
+    padding: 10px 20px;
+    border-radius: 1rem;
+    font-weight: bolder;
+    margin: 10px;
   }
   
   
   #your-puppy-page .btn1:hover,.btn2:hover {
-  background-color: #FF9595;
+    background-color: #FF9595;
   }
   
   
   #your-puppy-page .cake {
-  width: 20px;
-  height: 10px;
-  position: relative;
+    width: 20px;
+    height: 10px;
+    position: relative;
   }
   
   
   #your-puppy-page .heart {
-  position: relative;
-  top: 60px;
-  left: -20px;
+    position: relative;
+    top: 60px;
+    left: -20px;
   }
   
   
   #your-puppy-page h2 {
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
   }
   
   
   /* media query for larger screens */
   @media (min-width: 598px) {
-  #your-puppy-page .container img {
-  width: 500px;
-  height: 450px;
-  left: 40%;
-  }
+    #your-puppy-page .container img {
+      width: 500px;
+      height: 450px;
+      left: 40%;
+    }
   
   
-  #your-puppy-page .container .btn1,.btn2 {
-  left: 55%;
-  font-size: 15px;
-  padding: 13px 25px;
-  margin: 20px;
-  }
+    #your-puppy-page .container .btn1,.btn2 {
+      left: 55%;
+      font-size: 15px;
+      padding: 13px 25px;
+      margin: 20px;
+    }
   }
   
   
   /* media query 2 */
   @media (min-width: 992px) {
-  #nav-bar h1 {
-  font-size: 40px;
-  font-weight: 300;
-  }
+    #nav-bar h1 {
+      font-size: 40px;
+      font-weight: 300;
+    }
+    
+    
+    #your-puppy-page .container img {
+      width: 600px;
+      height: 550px;
+      top: 50%;
+      left: 60%;
+    }
   
-  
-  #your-puppy-page .container img {
-  width: 600px;
-  height: 550px;
-  top: 50%;
-  left: 60%;
-  }
-  
-  
-  #your-puppy-page .container .btn1,.btn2 {
-  left: 90%;
-  font-size: 20px;
-  padding: 16px 30px;
-  margin: 30px;
-  }
+    #your-puppy-page .container .btn1,.btn2 {
+      left: 90%;
+      font-size: 20px;
+      padding: 16px 30px;
+      margin: 30px;
+    }
   }
   
   
@@ -356,56 +350,56 @@
   
   /* Page 3 - Mood Log */
   #mood-log-container {
-  margin-top: 10em;
+    margin-top: 10em;
   }
   
   
   .mood-tracker-item {
-  display: flex;
-  align-items: center;
-  margin: 20px;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    justify-content: space-between;
   }
   .date-box {
-  background-color: #FDBA74;
-  border-radius: 10px;
-  padding: 20px;
-  font-size: 1.5em;
-  margin-right: 20px;
-  text-align: center;
-  min-width: 100px;
+    background-color: #FDBA74;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.5em;
+    margin-right: 20px;
+    text-align: center;
+    min-width: 100px;
   }
   .mood-indicators {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
   }
   .mood-indicator {
-  background-color: #FFCDB2;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  margin: 0 10px;
+    background-color: #FFCDB2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin: 0 10px;
   }
   .indicator-label {
-  text-align: center;
-  margin-top: 5px;
-  font-size: 0.9em;
-  color: #333;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #333;
   }
   .mood-note {
-  flex-grow: 2;
-  border: 2px solid #000;
-  border-radius: 25px;
-  padding: 10px 20px;
-  font-size: 1em;
-  outline: none;
-  min-width: 250px;
+    flex-grow: 2;
+    border: 2px solid #000;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1em;
+    outline: none;
+    min-width: 250px;
   }
   
   
@@ -413,80 +407,80 @@
   
   
   #puppy-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px;
-  margin-top: 10%;
-  margin-bottom: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 10%;
+    margin-bottom: 20%;
   }
   
   
   .puppy-card {
-  background-color: #fff;
-  border: 1px solid rgb(39, 39, 39);
-  border-radius: 10px;
-  border-width: 0.3em;
-  margin: 10px;
-  padding: 20px;
-  text-align: center;
-  width: 200px;
+    background-color: #fff;
+    border: 1px solid rgb(39, 39, 39);
+    border-radius: 10px;
+    border-width: 0.3em;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
   }
   
   
   .puppy-card img {
-  border-radius: 10px;
-  width: 100%;
-  height: auto;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
   }
   
   
   .puppy-card h1 {
-  font-size: 1.5em;
-  margin: 10px 0;
+    font-size: 1.5em;
+    margin: 10px 0;
   }
   
   
   .puppy-card p.dog-breed {
-  font-size: 1em;
-  color: #555;
+    font-size: 1em;
+    color: #555;
   }
   
   
   #search-container {
-  text-align: center;
-  margin-top: 10%;
+    text-align: center;
+    margin-top: 10%;
   }
   
   
   /* search filter function */
   #search-input {
-  padding: 10px;
-  width: 300px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
   }
   
   
   #search-input:focus {
-  border-color: #FDBA74;
+    border-color: #FDBA74;
   }
   
   
   #search-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #FDBA74;
-  color: black;
-  border: none;
-  border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FDBA74;
+    color: black;
+    border: none;
+    border-radius: 5px;
   }
   
   
   #search-button:hover {
-  background-color: #FDBA74;
+    background-color: #FDBA74;
   }
   

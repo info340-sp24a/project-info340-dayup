@@ -18,7 +18,7 @@ export function App({ puppyData }) {
       {/* <PageHome /> */}
       {/* <PageQuiz /> */}
       {/* <PageQuizCompletion /> */}
-      { < YourPuppy /> }
+      {/* { < YourPuppy /> } */}
 
 
       {<PagePuppyCards puppyData={puppyData} />}

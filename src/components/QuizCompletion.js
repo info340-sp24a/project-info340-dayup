@@ -29,4 +29,4 @@ const PageQuizCompletion = () => {
   );
 }
 
-export default MainContent;
+export default PageQuizCompletion;
