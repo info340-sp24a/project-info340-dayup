@@ -11,7 +11,7 @@ export function YourPuppy(props) {
         < PageHeader />
         <main>
             <section id="your-puppy-page">
-            <h2>Hi Hachi!</h2>
+            <h2>Hi Hachi!!</h2>
             <article className="center">
                 <section className="container">
                     <img src="img/doog 1.png" alt="A cute pixel art Shiba Inu"/>
