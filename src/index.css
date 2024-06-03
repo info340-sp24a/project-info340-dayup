@@ -364,61 +364,114 @@
   }
   
   
-  
-  
   /* Page 3 - Mood Log */
-  #mood-log-container {
-    margin-top: 10em;
-  }
-  
-  
-  .mood-tracker-item {
+  .mood-log-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mood-tracker-item {
     display: flex;
     align-items: center;
-    margin: 20px;
-    justify-content: space-between;
-  }
-  .date-box {
-    background-color: #FDBA74;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 10px;
-    padding: 20px;
-    font-size: 1.5em;
-    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.date-box {
+    flex: 1;
     text-align: center;
-    min-width: 100px;
-  }
-  .mood-indicators {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-  }
-  .mood-indicator {
-    background-color: #FFCDB2;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 1.5em;
-    margin: 0 10px;
+    font-weight: bold;
+}
+
+.mood-details {
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mood-icon, .sleep-icon, .motivation-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.mood-icon img, .sleep-icon img, .motivation-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.note-box {
+    flex: 3;
+    padding: 0 10px;
+    font-size: 1.1em;
+}
+
+@media (min-width: 598px) {
+  .mood-tracker-item {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  .indicator-label {
-    text-align: center;
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: #333;
+
+  .date-box, .mood-details, .note-box {
+      text-align: left;
+      width: 100%;
   }
-  .mood-note {
-    flex-grow: 2;
-    border: 2px solid #000;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 1em;
-    outline: none;
-    min-width: 250px;
+
+  .date-box {
+      font-size: 1.2em;
   }
+
+  .mood-details {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px 0;
+  }
+
+  .note-box {
+      padding: 10px 0;
+  }
+
+  .mood-icon img, .sleep-icon img, .motivation-icon img {
+      width: 30px;
+      height: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .mood-tracker-item {
+      flex-direction: row;
+      align-items: center;
+  }
+
+  .date-box {
+      font-size: 1.5em;
+  }
+
+  .mood-details {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0;
+  }
+
+  .note-box {
+      padding: 0 20px;
+  }
+
+  .mood-icon img, .sleep-icon img, .motivation-icon img {
+      width: 40px;
+      height: 40px;
+  }
+}
+
   
   
   /* Page 4 - Puppy collection page*/

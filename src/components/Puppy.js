@@ -1,6 +1,6 @@
 // Page 3 - your puppy
 import { PageHeader } from "./Header";
-import { PageFooter } from "./Footer";
+import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
 
 

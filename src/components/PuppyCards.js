@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { PageHeader } from "./Header";
-import { PageFooter } from "./Footer";
+import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
 
 export function PagePuppyCards({ puppyData }) {

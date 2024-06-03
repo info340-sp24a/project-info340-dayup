@@ -1,6 +1,6 @@
 // Page 1.a - Home Page
 
-import { PageFooter } from "./Footer";
+import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
 import { NavLink } from "react-router-dom";
 import { PageQuiz } from './Quiz';

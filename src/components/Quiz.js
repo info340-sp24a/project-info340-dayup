@@ -1,6 +1,6 @@
 // Page 1.b - Quiz Page
 
-import { PageFooter } from "./Footer";
+import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
 
 export function PageQuiz(props) {
