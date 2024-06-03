@@ -32,7 +32,7 @@ export function PagePuppyCards({ puppyData }) {
   return (
     <body>
       < NavBar />
-      <PageHeader />
+      {/* <PageHeader /> */}
       <main>
         {/* search filter */}
         <section id="search-container">

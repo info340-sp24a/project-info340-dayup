@@ -7,6 +7,10 @@ import puppyData from './data/mockdata.json';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getStorage } from 'firebase/storage';
+
+//Router
+import { BrowserRouter } from 'react-router-dom'
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -26,7 +30,9 @@ export const storage = getStorage(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App puppyData={puppyData} />
+  <BrowserRouter>
+    <App puppyData={puppyData} />
+  </BrowserRouter>
 
   // <React.StrictMode>
   //   <App puppyData={puppyData} />

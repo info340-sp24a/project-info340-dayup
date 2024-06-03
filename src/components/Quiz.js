@@ -1,6 +1,5 @@
 // Page 1.b - Quiz Page
 
-import { PageHeader } from "./Header";
 import { PageFooter } from "./Footer";
 import { NavBar } from "./navbar";
 
@@ -8,7 +7,6 @@ export function PageQuiz(props) {
   return (
     <body>
       < NavBar />
-      <PageHeader />
       <main>
         <section id="quiz-container" className="container">
           <section id="quiz-left-side">
