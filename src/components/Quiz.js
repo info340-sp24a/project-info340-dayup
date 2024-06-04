@@ -35,16 +35,16 @@ export function PageQuiz(props) {
               <section id="question1" className="question">
                 <h2>How was your day?</h2>
                 <section id="day-selection" className="quiz-icon-sections">
-                  {['happy', 'smiling', 'okay', 'sad', 'crying'].map((emotion, index) => (
+                  {[1, 2, 3, 4, 5].map((value, index) => (
                     <label key={index}>
                       <input
                         type="radio"
                         name="day"
-                        value={emotion}
+                        value={value}
                         onChange={formik.handleChange}
                         className="hidden"
                       />
-                      <img src={`img/emojis/gray-face${index + 1}.png`} alt={`This is a ${emotion} face`} />
+                      <img src={`img/emojis/gray-face${value}.png`} alt={`This is a face with value ${value}`} />
                     </label>
                   ))}
                 </section>
@@ -53,16 +53,16 @@ export function PageQuiz(props) {
               <section id="question2" className="question">
                 <h2>How well did you sleep?</h2>
                 <section id="sleep-selection" className="quiz-icon-sections">
-                  {[0, 20, 40, 60, 100].map((percent, index) => (
+                  {[1, 2, 3, 4, 5].map((value, index) => (
                     <label key={index}>
                       <input
                         type="radio"
                         name="sleep"
-                        value={percent}
+                        value={value}
                         onChange={formik.handleChange}
                         className="hidden"
                       />
-                      <img src={`img/emojis/gray-circle${index + 1}.png`} alt={`This is a ${percent}% full circle`} />
+                      <img src={`img/emojis/gray-circle${value}.png`} alt={`This is a ${value * 20}% full circle`} />
                     </label>
                   ))}
                 </section>
@@ -71,16 +71,16 @@ export function PageQuiz(props) {
               <section id="question3" className="question">
                 <h2>How motivated are you?</h2>
                 <section id="motivation-selection" className="quiz-icon-sections">
-                  {[0, 20, 40, 60, 100].map((percent, index) => (
+                  {[1, 2, 3, 4, 5].map((value, index) => (
                     <label key={index}>
                       <input
                         type="radio"
                         name="motivation"
-                        value={percent}
+                        value={value}
                         onChange={formik.handleChange}
                         className="hidden"
                       />
-                      <img src={`img/emojis/gray-circle${index + 1}.png`} alt={`This is a ${percent}% full circle`} />
+                      <img src={`img/emojis/gray-circle${value}.png`} alt={`This is a ${value * 20}% full circle`} />
                     </label>
                   ))}
                 </section>
@@ -96,6 +96,7 @@ export function PageQuiz(props) {
                 onChange={formik.handleChange}
                 value={formik.values.thankful}
               /><br />
+              {formik.errors.thankful ? <div className="error">{formik.errors.thankful}</div> : null}
               <label htmlFor="daily-note">Daily Note</label><br />
               <input
                 type="text"
@@ -103,7 +104,9 @@ export function PageQuiz(props) {
                 name="dailyNote"
                 onChange={formik.handleChange}
                 value={formik.values.dailyNote}
-              /><br /><br />
+              /><br />
+              {formik.errors.dailyNote ? <div className="error">{formik.errors.dailyNote}</div> : null}
+              <br /><br />
               <input type="submit" value="Submit" className="button" />
             </section>
           </form>
