@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PageHome } from './Home';
 import { PageQuiz } from './Quiz';
-import PageQuizCompletion from './QuizCompletion';
+import { PageQuizCompletion } from './QuizCompletion';
 import { PagePuppyCards } from './PuppyCards';
 import { YourPuppy } from './Puppy';
 import { PageLogin } from './Login';

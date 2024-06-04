@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { PageFooter } from "./footer";
-import { NavBar } from "./navbar";
+import { Header } from "./Header";
 import { NavLink } from "react-router-dom";
 // import { useAuth } from './AuthContext';
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
@@ -75,7 +75,7 @@ export function PageQuiz(props) {
 
   return (
     <>
-      <NavBar />
+      <Header />
       <main>
         <section id="quiz-container" className="container">
           <form className="form" onSubmit={formik.handleSubmit}>
@@ -94,7 +94,7 @@ export function PageQuiz(props) {
                         onChange={formik.handleChange}
                         className="hidden"
                       />
-                      <img src={`img/emojis/gray-face${value}.png`} alt={`This is a face with value ${value}`} />
+                      <img src={`../img/emojis/gray-face${value}.png`} alt={`This is a face with value ${value}`} />
                     </label>
                   ))}
                 </section>
@@ -112,7 +112,7 @@ export function PageQuiz(props) {
                         onChange={formik.handleChange}
                         className="hidden"
                       />
-                      <img src={`img/emojis/gray-circle${value}.png`} alt={`This is a ${value * 20}% full circle`} />
+                      <img src={`../img/emojis/gray-circle${value}.png`} alt={`This is a ${value * 20}% full circle`} />
                     </label>
                   ))}
                 </section>
@@ -130,7 +130,7 @@ export function PageQuiz(props) {
                         onChange={formik.handleChange}
                         className="hidden"
                       />
-                      <img src={`img/emojis/gray-circle${value}.png`} alt={`This is a ${value * 20}% full circle`} />
+                      <img src={`../img/emojis/gray-circle${value}.png`} alt={`This is a ${value * 20}% full circle`} />
                     </label>
                   ))}
                 </section>

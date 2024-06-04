@@ -3,7 +3,6 @@
 import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
 import { NavLink } from "react-router-dom";
-import { PageQuiz } from './Quiz';
 
 export function PageHome(props) {
   return (

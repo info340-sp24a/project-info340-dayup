@@ -197,7 +197,7 @@
     margin: 20px 0;
   }
 
-  .back-button {
+  #quiz-completion-page .button {
     padding: 20px;
     background-color: #FFBE6D;
     border-radius: 1rem;
@@ -205,10 +205,6 @@
     margin-top: 10px;
   }
 
-
-  .back-button:hover {
-    background-color: black;
-  }
   /* can't make the hover work for now - debug
   #face1:hover {
   background-image: url('img/emojis/color-face1.png');
