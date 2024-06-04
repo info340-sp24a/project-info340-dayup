@@ -1,15 +1,14 @@
 // Page 1.c - Quiz Completion Page
 
 import React from 'react';
-import { PageHeader } from "./Header";
 import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
+import { NavLink } from "react-router-dom";
 
 const PageQuizCompletion = () => {
   return (
     <body>
       < NavBar />
-      <PageHeader />
       <main>
         <section id="quiz-completion-page">
           <h1>Congratulations on completing today's check-in!</h1>
@@ -23,7 +22,7 @@ const PageQuizCompletion = () => {
             Remember, even on tough days, I'm here to wag my tail and remind you that brighter moments are just around the corner.
             You're doing great!
           </p>
-          <button className="back-button">Back To Home</button>
+          <button className="back-button"><NavLink to="/PageHome">Back to Home</NavLink></button>
         </section>
       </main>
       <PageFooter />

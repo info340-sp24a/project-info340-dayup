@@ -125,7 +125,7 @@ export function PageQuiz(props) {
               /><br />
               {formik.errors.dailyNote ? <div className="error">{formik.errors.dailyNote}</div> : null}
               <br /><br />
-              <input type="submit" value="Submit" className="button" />
+              <input type="submit" value="Submit" className="button" action="/PageHome/PageQuizCompletion/"/>
             </section>
           </form>
         </section>

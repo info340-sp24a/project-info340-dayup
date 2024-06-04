@@ -1,8 +1,8 @@
-import { NavBar } from './Navbar';
+import { NavBar } from './navbar';
 import { PageFooter } from "./footer";
 import React, { useState } from 'react';
 import moodlogData from '../data/moodlogdata-mock.json';
-import '././index.css';
+//import '././index.css';
 function formatDate(dateString) {
   const options = { month: 'long', day: 'numeric' };
   return new Date(dateString).toLocaleDateString('en-US', options);

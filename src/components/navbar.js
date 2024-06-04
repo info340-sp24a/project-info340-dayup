@@ -18,6 +18,9 @@ export function NavBar() {
                     <span></span>
                 </div>
                 <ul className={menuOpen ? "open" : ""}>
+                    <li>
+                        <NavLink className="navButtonSmall" to="/PageLogin">Log In</NavLink>    
+                    </li>
                     <li> 
                         <NavLink className="navButtonSmall" to="/PageHome">Daily Check-in</NavLink>
                     </li>
