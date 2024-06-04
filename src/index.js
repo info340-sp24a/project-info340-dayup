@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { App } from './components/App';
+import App from './components/App';
 import puppyData from './data/mockdata.json';
 
 // Import the functions you need from the SDKs you need
@@ -10,7 +10,7 @@ import { getStorage } from 'firebase/storage';
 import { getAuth } from 'firebase/auth';
 
 //Router
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -49,9 +49,5 @@ root.render(
   <BrowserRouter>
     <App puppyData={puppyData} />
   </BrowserRouter>
-
-  // <React.StrictMode>
-  //   <App puppyData={puppyData} />
-  // </React.StrictMode>
 );
 

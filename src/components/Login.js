@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
@@ -9,6 +9,12 @@ export function PageLogin(props) {
   // const [action, setAction] = useState("Log In"); // from original designed UI
 
   const authenticator = getAuth();
+
+  useEffect(() => {
+    authenticator.signOut().catch((error) => {
+      console.error('Error signing out: ', error);
+    });
+  }, [authenticator]);
 
   //an object of configuration values
   const firebaseUIConfig = {
@@ -31,6 +37,7 @@ export function PageLogin(props) {
       <main>
         <section className="auth-container">
           <h1>Please Sign In Below:</h1>
+          <p>*After you signed in, if you toggle the Sign In button again, we will be logged out.</p>
           <StyledFirebaseAuth
             firebaseAuth={authenticator}
             uiConfig={firebaseUIConfig}

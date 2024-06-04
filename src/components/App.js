@@ -6,61 +6,72 @@ import { PagePuppyCards } from './PuppyCards';
 import { YourPuppy } from './Puppy';
 import { PageLogin } from './Login';
 import { MoodLog } from './Moodlog';
-//import { NavBar } from './navbar';
+import { NavBar } from './navbar';
 import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
-import { Routes, Route } from 'react-router-dom';
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { Navigate, Routes, Route, Outlet, useNavigate } from 'react-router-dom';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 import DEFAULT_USERS from '../data/users.json';
 
 
-export function App({ puppyData }) {
-  const db = getDatabase();
-  const messageRef = ref(db, "message");
+export default function App({ puppyData }) {
+  // const db = getDatabase();
+  // const messageRef = ref(db, "message");
 //  const sarahRef = ref(db, "people/sarah");
-    firebaseSet(messageRef, newMessageObj);
+    // firebaseSet(messageRef, newMessageObj);
 
-  const [currentUser, setCurrentUser] = useState(DEFAULT_USERS[0]) //initially null;
+  const [currentUser, setCurrentUser] = useState(null); //initially null;
 
-  //effect to run when the component first loads
+  // *** effect to run when the component first loads ***
   useEffect(() => {
-    //log in a default user
-    // changeUser(DEFAULT_USERS[1])
-
     const auth = getAuth();
     onAuthStateChanged(auth, (firebaseUserObj) => {
-      console.log("auth state changed")
-      console.log(firebaseUserObj);
-
-      if(firebaseUserObj != null){ //user signed in
-        firebaseUserObj.userId = firebaseUserObj.uid;
-        firebaseUserObj.userName = firebaseUserObj.displayName;
-        firebaseUserObj.userImg = firebaseUserObj.photoURL || "/img/null.png";
-        setCurrentUser(firebaseUserObj);
+      if (firebaseUserObj) {
+        // Properly set properties of currentUser
+        setCurrentUser({
+          userId: firebaseUserObj.uid,
+          userName: firebaseUserObj.displayName,
+        });
+      } else {
+        setCurrentUser(null);  // Handle logged out state
       }
-      else { //is null, user signed out
-        setCurrentUser(DEFAULT_USERS[0]);
-      }
-    })
-  }, [])
+    });
+  }, []);
 
+  const changeUser = (newUserObj) => {
+    setCurrentUser(newUserObj);
+  }
 
 
   return (
     <div className="component-app">
+      {/* if the whole nav bar is seperated, add here */}
       <Routes>
-        <Route path="/" element = { <PageLogin />} />
-        <Route path="/PageLogin" element = { <PageLogin />} />
-        <Route path="/PageHome" element = { <PageHome />} />
-        <Route path="/PageHome/PageQuiz" element = { <PageQuiz />} />
-        <Route path="/PageHome/PageQuizCompletion" element = { <PageQuizCompletion />} />
-        <Route path="/YourPuppy" element = { <YourPuppy />} />
-        <Route path="/MoodLog" element = { <MoodLog />} />
-        <Route path="/PagePuppyCards" element = { <PagePuppyCards puppyData={puppyData} />} />
-      </Routes>
+        {/* protected routes */}
+        <Route element={<RequireAuth currentUser={currentUser} />}>
+          <Route path="/PageHome/PageQuizCompletion" element = { <PageQuizCompletion /> } />
+          <Route path="/YourPuppy" element = { <YourPuppy /> } />
+          <Route path="/MoodLog" element = { <MoodLog /> } />
+          <Route path="/PagePuppyCards" element = { <PagePuppyCards puppyData={puppyData} /> } />
+        </Route>
 
-      {/* <Display value={this.state.next || this.state.total || "0"} />
-        <ButtonPanel clickHandler={this.handleClick} /> */}
+        {/* public routes */}
+        <Route path="/PageLogin" element = { <PageLogin currentUser={currentUser} changeUserFunction={changeUser} />} />
+        <Route path="/PageHome" element = { <PageHome currentUser={currentUser} />} />
+      </Routes>
     </div>
   );
+}
+
+function RequireAuth(props) {
+  const { currentUser } = props;
+
+  if(!currentUser) { //if no user, say so
+    return (
+      <p>Forbidden!</p>
+    )
+  }
+  else { //otherwise, show the child route content
+    return <Outlet />
+  }
 }
