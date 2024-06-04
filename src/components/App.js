@@ -16,9 +16,9 @@ import DEFAULT_USERS from '../data/users.json';
 
 export function App({ puppyData }) {
   const db = getDatabase();
-  //const messageRef = ref(db, "message");
-  //  const sarahRef = ref(db, "people/sarah");
-  //firebaseSet(messageRef, newMessageObj);
+  const messageRef = ref(db, "message");
+//  const sarahRef = ref(db, "people/sarah");
+    firebaseSet(messageRef, newMessageObj);
 
   const [currentUser, setCurrentUser] = useState(DEFAULT_USERS[0]) //initially null;
 
