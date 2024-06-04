@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom'; // Assuming you are using react-rout
 import '../index.css';
 import { set } from 'firebase/database';
 
-export function NavBar() {
+export function NavBar(props) {
     const [menuOpen, setMenuOpen] = useState(false);
+
     return (
         <header>
              <nav id="navBar">
@@ -19,9 +20,6 @@ export function NavBar() {
                 </div>
                 <ul className={menuOpen ? "open" : ""}>
                     <li>
-                        <NavLink className="navButtonSmall" to="/PageLogin">Log In</NavLink>    
-                    </li>
-                    <li> 
                         <NavLink className="navButtonSmall" to="/PageHome">Daily Check-in</NavLink>
                     </li>
                     <li>
@@ -31,8 +29,11 @@ export function NavBar() {
                         <NavLink className="navButtonSmall" to="/MoodLog">Mood Log</NavLink>
                     </li>
                     <li>
-                        <NavLink className="navButtonSmall" to="/PagePuppyCards">Puppy List</NavLink> 
-                    </li>  
+                        <NavLink className="navButtonSmall" to="/PagePuppyCards">Puppy List</NavLink>
+                    </li>
+                    <li>
+                        <NavLink className="navButtonSmall" to="/PageLogin">Log In</NavLink>
+                    </li>
                 </ul>
             </nav>
         </header>

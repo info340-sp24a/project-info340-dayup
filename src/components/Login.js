@@ -1,33 +1,43 @@
 import React, { useState } from 'react';
 import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 export function PageLogin(props) {
 
-  const [action, setAction] = useState("Log In");
+  // const [action, setAction] = useState("Log In"); // from original designed UI
+
+  const authenticator = getAuth();
+
+  //an object of configuration values
+  const firebaseUIConfig = {
+    signInOptions: [
+      { provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true },
+      GoogleAuthProvider.PROVIDER_ID,
+    ],
+    signInFlow: 'popup', //don't redirect to authenticate
+    credentialHelper: 'none', //don't show the email account chooser
+    callbacks: { //"lifecycle" callbacks
+      signInSuccessWithAuthResult: () => {
+        return false; //don't redirect after authentication
+      }
+    }
+  }
 
   return (
     <body>
       < NavBar />
       <main>
         <section className="auth-container">
-          <div className="auth-box">
-            <h1 className="auth-title">{action}</h1>
-            <div className="form-group">
-              <label>Email</label>
-              <input type="email" className="form-input" placeholder="Enter your email" />
-            </div>
-            <div className="form-group">
-              <label>Password</label>
-              <input type="password" className="form-input" placeholder="Enter your password" />
-            </div>
-            <button className={action==="Log In"?"auth-button click-color":"auth-button"} onClick={() => {setAction("Log In")}}>Login</button>
-            <button className={action==="Sign Up"?"auth-button click-color":"auth-button"} onClick={() => {setAction("Sign Up")}}>Sign Up</button>
-          </div>
+          <h1>Please Sign In Below:</h1>
+          <StyledFirebaseAuth
+            firebaseAuth={authenticator}
+            uiConfig={firebaseUIConfig}
+          />
         </section>
       </main>
       <PageFooter />
     </body>
-
   );
 }
