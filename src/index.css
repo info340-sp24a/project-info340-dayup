@@ -141,6 +141,14 @@
     max-height: 50px;
   }
 
+  #quiz-container .button {
+    padding: 20px;
+    background-color: #FFBE6D;
+    border-radius: 1rem;
+    font-weight: bolder;
+    margin-top: 10px;
+  }
+
   /* Page 1.c - quiz completion page */
   #quiz-completion-page {
     text-align: center;
@@ -190,15 +198,13 @@
   }
 
   .back-button {
-    background-color: #f9a825;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 20px;
+    padding: 20px;
+    background-color: #FFBE6D;
+    border-radius: 1rem;
+    font-weight: bolder;
+    margin-top: 10px;
   }
+  
 
   .back-button:hover {
     background-color: black;

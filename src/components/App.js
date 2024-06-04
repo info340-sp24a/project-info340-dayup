@@ -11,10 +11,10 @@ import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 import { Routes, Route } from 'react-router-dom';
 
 export function App({ puppyData }) {
-//  const db = getDatabase();
-//  const peopleRef = ref(db, "people");
-//  const sarahRef = ref(db, "people/sarah");
-//  firebaseSet(sarahRef, "thats me, sarah");
+  const db = getDatabase();
+  //const messageRef = ref(db, "message");
+  //  const sarahRef = ref(db, "people/sarah");
+  //firebaseSet(messageRef, newMessageObj);
 
   return (
     <div className="component-app">

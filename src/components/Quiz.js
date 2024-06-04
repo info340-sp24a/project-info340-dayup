@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
+import { NavLink } from "react-router-dom";
 
 function storeFormData(values) {
   const formData = {
@@ -125,7 +126,7 @@ export function PageQuiz(props) {
               /><br />
               {formik.errors.dailyNote ? <div className="error">{formik.errors.dailyNote}</div> : null}
               <br /><br />
-              <input type="submit" value="Submit" className="button" />
+              <button type="submit" value="Submit" className="button"><NavLink to="/PageHome/PageQuizCompletion">submit</NavLink></button>
             </section>
           </form>
         </section>
