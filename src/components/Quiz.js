@@ -4,6 +4,23 @@ import * as Yup from 'yup';
 import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
 
+function storeFormData(values) {
+  const formData = {
+    day: Number(values.day),
+    sleep: Number(values.sleep),
+    motivation: Number(values.motivation),
+    thankful: values.thankful,
+    dailyNote: values.dailyNote,
+  };
+
+  // Store the data in local storage (you can replace this with a call to a server)
+  const existingData = JSON.parse(localStorage.getItem('formData')) || [];
+  existingData.push(formData);
+  localStorage.setItem('formData', JSON.stringify(existingData));
+
+  console.log('Form Data Stored:', formData);
+}
+
 export function PageQuiz(props) {
   const formik = useFormik({
     initialValues: {
@@ -18,6 +35,7 @@ export function PageQuiz(props) {
       dailyNote: Yup.string().required('This field is required'),
     }),
     onSubmit: values => {
+      storeFormData(values);
       console.log(values);
       // Here, submit your form values to a server or handle them as needed
     },
