@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { PageFooter } from "./footer";
+import { NavBar } from "./navbar";
 
 export function PageLogin(props) {
 
@@ -6,6 +8,7 @@ export function PageLogin(props) {
 
   return (
     <body>
+      < NavBar />
       <main>
         <section className="auth-container">
           <div className="auth-box">
@@ -23,6 +26,7 @@ export function PageLogin(props) {
           </div>
         </section>
       </main>
+      <PageFooter />
     </body>
 
   );
