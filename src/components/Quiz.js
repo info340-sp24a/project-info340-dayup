@@ -4,25 +4,46 @@ import * as Yup from 'yup';
 import { PageFooter } from "./footer";
 import { NavBar } from "./navbar";
 import { NavLink } from "react-router-dom";
+// import { useAuth } from './AuthContext';
+import { getDatabase, ref, set as firebaseSet, push as firebasePush, onValue } from 'firebase/database';
 
-function storeFormData(values) {
+
+function storeFormData(values, userId) {
+  console.log('Storing form data for user:', userId);
+
   const formData = {
     day: Number(values.day),
     sleep: Number(values.sleep),
     motivation: Number(values.motivation),
     thankful: values.thankful,
     dailyNote: values.dailyNote,
+    timestamp: Date.now(),
   };
 
   // Store the data in local storage (you can replace this with a call to a server)
-  const existingData = JSON.parse(localStorage.getItem('formData')) || [];
-  existingData.push(formData);
-  localStorage.setItem('formData', JSON.stringify(existingData));
+  // const existingData = JSON.parse(localStorage.getItem('formData')) || [];
+  // existingData.push(formData);
+  // localStorage.setItem('formData', JSON.stringify(existingData));
 
-  console.log('Form Data Stored:', formData);
+  // console.log('Form Data Stored:', formData);
+
+  // storing data to firebase
+  const database = getDatabase();
+
+  const path = 'users/' + userId + '/dailyCheckIn/' + formData.timestamp;
+  const userRef = ref(database, path);
+  firebaseSet(userRef, formData)
+    .then(() => {
+      console.log('Form Data Stored:', formData);
+    })
+    .catch((error) => {
+      console.error('Error storing data:', error);
+    });
 }
 
 export function PageQuiz(props) {
+  // const { user } = useAuth();
+
   const formik = useFormik({
     initialValues: {
       day: '',
@@ -32,13 +53,23 @@ export function PageQuiz(props) {
       dailyNote: 'Hiii',
     },
     validationSchema: Yup.object({
+      day: Yup.number().required('Day rating is required'), // added as required question
+      sleep: Yup.number().required('Sleep rating is required'), // added as required question
+      motivation: Yup.number().required('Motivation rating is required'), // added as required question
       thankful: Yup.string().required('This field is required'),
       dailyNote: Yup.string().required('This field is required'),
     }),
     onSubmit: values => {
       storeFormData(values);
       console.log(values);
-      // Here, submit your form values to a server or handle them as needed
+
+      // if (user) {
+      //   storeFormData(values);
+      //   console.log(values);
+      //   // Here, submit your form values to a server or handle them as needed
+      // } else {
+      //   alert('You must be logged in to submit the form!');
+      // }
     },
   });
 
