@@ -24,3 +24,6 @@ console.log(matchingPuppy); // Log the matching puppy's details (json info)
 
 
 // add the match puppy **TO Firebase** (that person's PuppyList) // TBD
+
+
+

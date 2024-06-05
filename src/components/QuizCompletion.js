@@ -2,6 +2,28 @@ import React, { useState } from 'react';
 import { PageFooter } from "./footer";
 import { Header } from "./Header";
 import { NavLink } from "react-router-dom";
+import { getDatabase, ref} from 'firebase/database';
+//import { initializeApp } from "firebase/app";
+
+
+function Match(puppyData) {
+  let mockQuizScores = [1, 2, 5];
+
+  // add up the quiz score
+  let quizScoreSum = 0;
+  mockQuizScores.forEach(mockQuizScore => {
+    quizScoreSum += mockQuizScore;
+  });
+  console.log(quizScoreSum); // should be 8
+
+  // find the matching score puppy, with the corresponded quiz score
+  const findMatchingPuppy = score => {
+    return puppyData.find(puppy => puppy.score === score);
+  };
+
+  const matchingPuppy = findMatchingPuppy(quizScoreSum);
+  console.log(matchingPuppy); // Log the matching puppy's details (json info)
+}
 
 export function PageQuizCompletion(props){
   const [dogName, setDogName] = useState('');

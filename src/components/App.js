@@ -6,12 +6,12 @@ import { PagePuppyCards } from './PuppyCards';
 import { YourPuppy } from './Puppy';
 import { PageLogin } from './Login';
 import { MoodLog } from './Moodlog';
-import { NavBar } from './navbar';
-import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
+import { getDatabase, ref, set as firebaseSet, onValue} from 'firebase/database';
 import { Navigate, Routes, Route, Outlet, useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 import DEFAULT_USERS from '../data/users.json';
+import { onSnapshot } from 'firebase/firestore';
 
 
 export default function App({ puppyData }) {
@@ -19,6 +19,18 @@ export default function App({ puppyData }) {
   // const messageRef = ref(db, "message");
 //  const sarahRef = ref(db, "people/sarah");
     // firebaseSet(messageRef, newMessageObj);
+
+
+  useEffect(() => {
+    const db = getDatabase();
+    const matchingRef = ref(db, 'matchingPuppy');
+    //addEventListener(matchingRef, ()=> {})
+    onValue(matchingRef, (snapshot) => {
+      console.log("changed");
+      const data = snapshot.val();
+      console.log(data);
+    })
+  }, [])
 
   const [currentUser, setCurrentUser] = useState(null); //initially null;
 
