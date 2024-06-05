@@ -49,6 +49,7 @@ export default function App({ puppyData }) {
       <Routes>
         {/* protected routes */}
         <Route element={<RequireAuth currentUser={currentUser} />}>
+          <Route path="/PageHome/PageQuiz" element = { <PageQuiz /> } />
           <Route path="/PageHome/PageQuizCompletion" element = { <PageQuizCompletion /> } />
           <Route path="/YourPuppy" element = { <YourPuppy /> } />
           <Route path="/MoodLog" element = { <MoodLog /> } />
@@ -58,6 +59,9 @@ export default function App({ puppyData }) {
         {/* public routes */}
         <Route path="/PageLogin" element = { <PageLogin currentUser={currentUser} changeUserFunction={changeUser} />} />
         <Route path="/PageHome" element = { <PageHome currentUser={currentUser} />} />
+
+        {/* default route */}
+        <Route path="/" element={<Navigate to="/PageHome" />} />
       </Routes>
     </div>
   );
