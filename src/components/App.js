@@ -9,30 +9,13 @@ import { MoodLog } from './Moodlog';
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, remove, onValue} from 'firebase/database';
 import { Navigate, Routes, Route, Outlet, useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
-import { database, auth } from './firebase';
+import { database, auth } from '../index.js';
 
 import DEFAULT_USERS from '../data/users.json';
 import { onSnapshot } from 'firebase/firestore';
 
 
 export default function App({ puppyData }) {
-  // const db = getDatabase();
-  // const messageRef = ref(db, "message");
-//  const sarahRef = ref(db, "people/sarah");
-    // firebaseSet(messageRef, newMessageObj);
-
-
-  // VIVIAN yesterday's
-  // useEffect(() => {
-  //   const db = getDatabase();
-  //   const matchingRef = ref(db, 'matchingPuppy');
-  //   //addEventListener(matchingRef, ()=> {})
-  //   onValue(matchingRef, (snapshot) => {
-  //     console.log("changed");
-  //     const data = snapshot.val();
-  //     console.log(data);
-  //   })
-  // }, [])
 
   // Liked Puppies
   const handleLikedPuppyToFirebase = (puppy) => {
@@ -45,7 +28,7 @@ export default function App({ puppyData }) {
 
 
   // Form Submission
-  const [data, setData] = useState({});
+  // const [data, setData] = useState({});
   // handle data submission to Firebase
   const handleSubmitToFirebase = (formData) => {
     const db = getDatabase();
