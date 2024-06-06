@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageFooter } from "./footer";
 import { Header } from "./Header";
 import { NavLink } from "react-router-dom";
-import { getDatabase, ref} from 'firebase/database';
-//import { initializeApp } from "firebase/app";
+import { ref, onValue } from "firebase/database";
+import puppyData from '../data/puppy-data.json';
 
 
-function Match(puppyData) {
+function MatchPuppy(puppyData) {
+
+  // read the score from 'day', 'motivation', & 'sleep'
+
+
   let mockQuizScores = [1, 2, 5];
 
   // add up the quiz score
