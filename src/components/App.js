@@ -6,7 +6,7 @@ import { PagePuppyCards } from './PuppyCards';
 import { YourPuppy } from './Puppy';
 import { PageLogin } from './Login';
 import { MoodLog } from './Moodlog';
-import { getDatabase, ref, set as firebaseSet, push, onValue} from 'firebase/database';
+import { getDatabase, ref, set as firebaseSet, push as firebasePush, remove, onValue} from 'firebase/database';
 import { Navigate, Routes, Route, Outlet, useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
@@ -33,19 +33,29 @@ export default function App({ puppyData }) {
   //   })
   // }, [])
 
-  const [data, setData] = useState({});
+  // Liked Puppies
+  const handleLikedPuppyToFirebase = (puppy) => {
+    const db = getDatabase();
+    const likesRef = ref(db, 'likedPuppies');
+    firebasePush(likesRef, puppy)
+      .then(() => console.log("Liked puppy saved to Firebase successfully!"))
+      .catch(error => console.error('Failed to save liked puppy:', error));
+  };
 
-  // Function to handle data submission to Firebase
+
+  // Form Submission
+  const [data, setData] = useState({});
+  // handle data submission to Firebase
   const handleSubmitToFirebase = (formData) => {
     const db = getDatabase();
     const quizRef = ref(db, 'quizFormResponses');
-    push(quizRef, formData)
+    firebasePush(quizRef, formData)
       .then(() => console.log("Data submitted successfully!"))
       .catch(error => console.error('Error submitting data:', error));
   };
 
+  // User Auth
   const [currentUser, setCurrentUser] = useState(null); //initially null;
-
   // *** effect to run when the component first loads ***
   useEffect(() => {
     const auth = getAuth();
@@ -77,7 +87,7 @@ export default function App({ puppyData }) {
           <Route path="/PageHome/PageQuizCompletion" element = { <PageQuizCompletion /> } />
           <Route path="/YourPuppy" element = { <YourPuppy /> } />
           <Route path="/MoodLog" element = { <MoodLog /> } />
-          <Route path="/PagePuppyCards" element = { <PagePuppyCards puppyData={puppyData} /> } />
+          <Route path="/PagePuppyCards" element = { <PagePuppyCards puppyData={puppyData} likedPuppy={handleLikedPuppyToFirebase}/> } />
         </Route>
 
         {/* public routes */}
@@ -96,7 +106,7 @@ function RequireAuth(props) {
 
   if(!currentUser) { //if no user, say so
     return (
-      <p>Forbidden!</p>
+      <p>Forbidden! Sign In first to view further content!</p>
     )
   }
   else { //otherwise, show the child route content
