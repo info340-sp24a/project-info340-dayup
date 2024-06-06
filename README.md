@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Description of 2.5 interactive features
+1. On the Daily Check-in Page, users can click the "Record Today's Mood" button to record their mood, and they can submit different answers multiple times.
+2. On the Puppy List Page, users can like a specific puppy, and the liked puppy will be saved to Firebase for future reference.
+3. Users can filter/search for a specific puppy on the Puppy List Page.
+
 ## Available Scripts
 
 In the project directory, you can run:
