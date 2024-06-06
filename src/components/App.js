@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { PageHome } from './Home';
-import { PageQuiz } from './Quiz';
+import PageQuiz from './Quiz';
 import { PageQuizCompletion } from './QuizCompletion';
 import { PagePuppyCards } from './PuppyCards';
 import { YourPuppy } from './Puppy';
 import { PageLogin } from './Login';
 import { MoodLog } from './Moodlog';
-import { getDatabase, ref, set as firebaseSet, onValue} from 'firebase/database';
+import { getDatabase, ref, set as firebaseSet, push, onValue} from 'firebase/database';
 import { Navigate, Routes, Route, Outlet, useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
@@ -21,16 +21,28 @@ export default function App({ puppyData }) {
     // firebaseSet(messageRef, newMessageObj);
 
 
-  useEffect(() => {
+  // VIVIAN yesterday's
+  // useEffect(() => {
+  //   const db = getDatabase();
+  //   const matchingRef = ref(db, 'matchingPuppy');
+  //   //addEventListener(matchingRef, ()=> {})
+  //   onValue(matchingRef, (snapshot) => {
+  //     console.log("changed");
+  //     const data = snapshot.val();
+  //     console.log(data);
+  //   })
+  // }, [])
+
+  const [data, setData] = useState({});
+
+  // Function to handle data submission to Firebase
+  const handleSubmitToFirebase = (formData) => {
     const db = getDatabase();
-    const matchingRef = ref(db, 'matchingPuppy');
-    //addEventListener(matchingRef, ()=> {})
-    onValue(matchingRef, (snapshot) => {
-      console.log("changed");
-      const data = snapshot.val();
-      console.log(data);
-    })
-  }, [])
+    const quizRef = ref(db, 'quizFormResponses');
+    push(quizRef, formData)
+      .then(() => console.log("Data submitted successfully!"))
+      .catch(error => console.error('Error submitting data:', error));
+  };
 
   const [currentUser, setCurrentUser] = useState(null); //initially null;
 
@@ -61,7 +73,7 @@ export default function App({ puppyData }) {
       <Routes>
         {/* protected routes */}
         <Route element={<RequireAuth currentUser={currentUser} />}>
-          <Route path="/PageHome/PageQuiz" element = { <PageQuiz /> } />
+          <Route path="/PageHome/PageQuiz" element = { <PageQuiz handleSubmit={handleSubmitToFirebase}/> } />
           <Route path="/PageHome/PageQuizCompletion" element = { <PageQuizCompletion /> } />
           <Route path="/YourPuppy" element = { <YourPuppy /> } />
           <Route path="/MoodLog" element = { <MoodLog /> } />
