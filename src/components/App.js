@@ -9,6 +9,7 @@ import { MoodLog } from './Moodlog';
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, remove, onValue} from 'firebase/database';
 import { Navigate, Routes, Route, Outlet, useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { database, auth } from './firebase';
 
 import DEFAULT_USERS from '../data/users.json';
 import { onSnapshot } from 'firebase/firestore';
