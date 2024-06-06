@@ -13,7 +13,7 @@ export function MoodLog() {
 
   const renderEntries = () => {
     return entries.map((entry, index) => (
-      <div key={index} className="mood-tracker-item">
+      <div key={index} className="mood-card">
         <div className="date-box">
           <span>{formatDate(entry.date)}</span>
         </div>

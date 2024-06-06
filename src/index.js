@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App';
 import puppyData from './data/mockdata.json';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getStorage } from 'firebase/storage';
 import { getAuth } from 'firebase/auth';
+import { getDatabase } from 'firebase/database';
 
 //Router
 import { BrowserRouter } from 'react-router-dom';
@@ -29,20 +32,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBK5DNwoFLLhwXVy429StlNE7COl5dk4qE",
-//   authDomain: "info340-dayup-415be.firebaseapp.com",
-//   projectId: "info340-dayup-415be",
-//   storageBucket: "info340-dayup-415be.appspot.com",
-//   messagingSenderId: "675388777441",
-//   appId: "1:675388777441:web:6d1eae0e8f64ae5d7928a0"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 export const auth = getAuth(app);
+export const database = getDatabase(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -50,4 +42,3 @@ root.render(
     <App puppyData={puppyData} />
   </BrowserRouter>
 );
-
