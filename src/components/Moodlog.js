@@ -3,26 +3,25 @@ import { PageFooter } from "./footer";
 import React, { useState, useEffect } from 'react';
 
 
-
-
 function formatDate(dateString) {
   const options = { month: 'long', day: 'numeric' };
   return new Date(dateString).toLocaleDateString('en-US', options);
 }
+
 export function MoodLog({dataCollection}) {
   //const [entries, setEntries] = useState([moodlogData]);
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const collectedData = await dataCollection();
-      setData(collectedData);
-    } 
+        const data = await dataCollection();
+        console.log("Fetched Data:", data);
+        setData(data); 
+    }
     fetchData();
-  }, []);
+  }, [dataCollection]);
 
   const renderEntries = () => {
-
     return data.map((entry, index) => (
       // return entries.map((entry, index) => (
       <div key={index} className="mood-tracker-item">

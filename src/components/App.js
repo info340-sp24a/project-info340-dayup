@@ -42,13 +42,19 @@ export default function App({ puppyData }) {
 
   // data collection 
   const dataCollection = async () => {
-    const querySnapshot = await getDocs(collection(db, "quizFormResponses"));
-    let data = [];
-    querySnapshot.forEach((doc) => {
-      data.push({ id: doc.id, ...doc.data() });
-    });
-    return data;
-  };
+    try {
+      const querySnapshot = await getDocs(collection(db, "quizFormResponses"));
+      let data = [];
+      querySnapshot.forEach((doc) => {
+        data.push({ id: doc.id, ...doc.data()});
+      });
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return [];
+    }
+  }
+
 
   // User Auth
   const [currentUser, setCurrentUser] = useState(null); //initially null;
