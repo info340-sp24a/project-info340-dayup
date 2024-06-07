@@ -5,6 +5,7 @@ import App from './components/App';
 import puppyData from './data/mockdata.json';
 import firebase from 'firebase/app';
 import 'firebase/database';
+import { getFirestore } from "firebase/firestore";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -35,6 +36,7 @@ const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 export const auth = getAuth(app);
 export const database = getDatabase(app);
+export const db = getFirestore(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

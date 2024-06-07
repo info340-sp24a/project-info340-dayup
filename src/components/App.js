@@ -9,10 +9,12 @@ import { MoodLog } from './Moodlog';
 import { getDatabase, ref, set as firebaseSet, push as firebasePush, remove, onValue} from 'firebase/database';
 import { Navigate, Routes, Route, Outlet, useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { getDocs, collection } from 'firebase/firestore';
 import { database, auth } from '../index.js';
+import { db } from '../index.js';
 
 import DEFAULT_USERS from '../data/users.json';
-import { onSnapshot } from 'firebase/firestore';
+import { onSnapshot, getFirestore} from 'firebase/firestore';
 
 
 export default function App({ puppyData }) {
@@ -36,6 +38,16 @@ export default function App({ puppyData }) {
     firebasePush(quizRef, formData)
       .then(() => console.log("Data submitted successfully!"))
       .catch(error => console.error('Error submitting data:', error));
+  };
+
+  // data collection 
+  const dataCollection = async () => {
+    const querySnapshot = await getDocs(collection(db, "quizFormResponses"));
+    let data = [];
+    querySnapshot.forEach((doc) => {
+      data.push({ id: doc.id, ...doc.data() });
+    });
+    return data;
   };
 
   // User Auth
@@ -70,7 +82,7 @@ export default function App({ puppyData }) {
           <Route path="/PageHome/PageQuiz" element = { <PageQuiz handleSubmit={handleSubmitToFirebase}/> } />
           <Route path="/PageHome/PageQuizCompletion" element = { <PageQuizCompletion /> } />
           <Route path="/YourPuppy" element = { <YourPuppy /> } />
-          <Route path="/MoodLog" element = { <MoodLog /> } />
+          <Route path="/MoodLog" element = { <MoodLog dataCollection={dataCollection}/> } />
           <Route path="/PagePuppyCards" element = { <PagePuppyCards puppyData={puppyData} likedPuppy={handleLikedPuppyToFirebase}/> } />
         </Route>
 

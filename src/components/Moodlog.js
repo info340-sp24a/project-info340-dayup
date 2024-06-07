@@ -1,18 +1,30 @@
 import { NavBar } from './navbar';
 import { PageFooter } from "./footer";
-import React, { useState } from 'react';
-import moodlogData from '../data/moodlogdata-mock.json';
-import { PageHeader } from "./Header";
+import React, { useState, useEffect } from 'react';
+
+
+
 
 function formatDate(dateString) {
   const options = { month: 'long', day: 'numeric' };
   return new Date(dateString).toLocaleDateString('en-US', options);
 }
-export function MoodLog() {
-  const [entries, setEntries] = useState(moodlogData);
+export function MoodLog({dataCollection}) {
+  //const [entries, setEntries] = useState([moodlogData]);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const collectedData = await dataCollection();
+      setData(collectedData);
+    } 
+    fetchData();
+  }, []);
 
   const renderEntries = () => {
-    return entries.map((entry, index) => (
+
+    return data.map((entry, index) => (
+      // return entries.map((entry, index) => (
       <div key={index} className="mood-tracker-item">
         <div className="date-box">
           <span>{formatDate(entry.date)}</span>
